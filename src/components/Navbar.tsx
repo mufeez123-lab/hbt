@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo container with adjusted top margin */}
-          <div className="flex items-center justify-center w-full md:w-auto mt-[-10px]">  {/* Adjusted logo margin-top */}
+          <div className="flex items-center justify-center w-full md:w-auto mt-[-10px]">
             <img
               src="/hbtlogo.png"
               alt="HBT Caterers Logo"
@@ -79,10 +79,10 @@ export const Navbar: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-white shadow-lg py-4 px-4"
+              className="md:hidden bg-white shadow-lg py-4 px-4 w-full" /* Ensure the width is only applied on open */
             >
               <div className="flex flex-col space-y-4">
-                {['home', 'about', 'services', 'events', 'gallery', 'testimonials', 'contact'].map((item) => (
+                {['home', 'services', 'events', 'gallery', 'contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
