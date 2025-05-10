@@ -73,29 +73,28 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         <AnimatePresence>
-  {isOpen && (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: 'auto' }}
-      exit={{ opacity: 0, height: 0 }}
-      transition={{ duration: 0 }}
-      className="md:hidden bg-white shadow-lg py-4 px-4 w-full" // Full width only when the menu is open
-    >
-      <div className="flex flex-col space-y-4">
-        {['home', 'services', 'events', 'gallery', 'contact'].map((item) => (
-          <button
-            key={item}
-            onClick={() => scrollToSection(item)}
-            className="capitalize font-medium text-gray-800 hover:text-red-600 transition duration-300"
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-white shadow-lg py-4 px-4 w-full" // Full width only when the menu is open
+            >
+              <div className="flex flex-col space-y-4">
+                {['home', 'services', 'events', 'gallery', 'contact'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className="capitalize font-medium text-gray-800 hover:text-red-600 transition duration-300"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );
